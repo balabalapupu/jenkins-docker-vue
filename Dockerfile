@@ -20,8 +20,8 @@ FROM nginx  as production-stage
 
 
 
-COPY --from=build-stage /app/dist /usr/share/nginx/dev
-COPY --from=build-stage /app/default.conf /etc/nginx/conf.d/dev.conf
+COPY --from=build-stage /app/dist /app/html
+COPY --from=build-stage /app/default.conf /etc/nginx/conf.d/default.conf
 
 
 # docker build -t jenkins-docker-vue .
